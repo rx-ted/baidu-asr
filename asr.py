@@ -57,7 +57,35 @@ class REC():
         self.RATE = 8000  # 采样率
         RECORD_SECONDS = 10  # 录音10秒
         p = pyaudio.PyAudio()
-        stream = p.open(format=self.FORMAT, channels=self.CHANNELS, rate=self.RATE, input=True, frames_per_buffer=CHUNK)
+        try:
+            stream = p.open(format=self.FORMAT,
+                            channels=self.CHANNELS,
+                            rate=self.RATE,
+                            input=True,
+                            frames_per_buffer=CHUNK)
+        except Exception as e:
+            print(e)
+            print('设置-隐私-麦克风 下关闭/开启麦克风的应用访问权限')
+            exit(0)
+
+        '''
+        self,
+             PA_manager: Any,
+             rate: Any,
+             channels: Any,
+             format: Any,
+             input: bool = False,
+             output: bool = False,
+             input_device_index: Any = None,
+             output_device_index: Any = None,
+             frames_per_buffer: int = 1024,
+             start: bool = True,
+             input_host_api_specific_stream_info: Any = None,
+             output_host_api_specific_stream_info: Any = None,
+             stream_callback: Any = None
+        
+        '''
+
         print("* 开始录音，您有%d秒时间输入语音内容！" % RECORD_SECONDS)
         self.frames = []
         for i in range(0, int(self.RATE / CHUNK * RECORD_SECONDS)):
