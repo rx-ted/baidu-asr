@@ -4,27 +4,27 @@
 基于百度asr的录音，识别能够转为文字显示。
 
 #### 软件架构
-软件架构说明
+python3.7+  windows10/debian 64位
 
 
 #### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+pip install pyaudio (这个可能最难安装，pip install XXX.whl)
+
+##### 安装pyaudio出问题，请在https://www.lfd.uci.edu/~gohlke/pythonlibs/      
+#查看，我python版本是3.9，下载3.9即可。
+pip install wave
+
+pip install baidu-aip
 
 #### 使用说明
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+###### 2个文件最好放在同一文件。
+python asr.py
 
 #### 参与贡献
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+
 
 
 #### 特技
